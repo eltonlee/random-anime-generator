@@ -1,9 +1,7 @@
-import CenterLogo from './CenterLogo';
+import CenterLogo from './components/CenterLogo';
 import './index.css'
-import Background from './background';
-import './bg.scss';
 import React from 'react';
-import Button from './button';
+import Button from './components/button';
 
 
 function App() {
