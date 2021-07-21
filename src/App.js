@@ -10,9 +10,10 @@ import { useState, useEffect} from 'react';
 function App() {
 
   const [anime, SetAnime] = useState([]);
+  const [info, SetInfo] = useState([]);
 
   const getAnime = async () => {
-    const temp = await fetch('https://api.jikan.moe/v3/anime/1')
+    const temp = await fetch('https://animechan.vercel.app/api/available/anime')
       .then(res => res.json());
     
     SetAnime(temp);
@@ -20,11 +21,22 @@ function App() {
 
   useEffect(() => {
     getAnime();
-    
-    
   }, [])
 
-  console.log(anime)
+  const getInfo = async () => {
+    const temp2 = await fetch('https://api.jikan.moe/v3/search/anime?q=Fate/Zero&page=1')
+      .then(res => res.json());
+    
+    SetInfo(temp2);
+  }
+
+  useEffect(() => {
+    getInfo();
+  }, [])
+    
+
+  //console.log(anime)
+  console.log(info)
 
   return (
     
