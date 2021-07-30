@@ -23,8 +23,15 @@ function App() {
     getAnime();
   }, [])
 
+  //Get a random number between 0 and 795
+  var rng = Math.random() * (795);
+  rng = Math.floor(rng);
+  const current_anime = anime[rng];
+  
+
+  //When passing a string into the URL, use backquotes not single quotes.
   const getInfo = async () => {
-    const temp2 = await fetch('https://api.jikan.moe/v3/search/anime?q=Fate/Zero&page=1')
+    const temp2 = await fetch(`https://api.jikan.moe/v3/search/anime?q=${current_anime}&order_by=title&sort=asc&limit=1`)
       .then(res => res.json());
     
     SetInfo(temp2);
@@ -36,17 +43,17 @@ function App() {
     
 
   //console.log(anime)
-  console.log(info)
+  //console.log(info.results[0].title)
+  //console.log(info.results)
+  //console.log(current_anime)
 
   return (
     
     <React.Fragment>
     <CenterLogo />
     <Button />
-    < img src={anime.image_url} alt="" />
-
+    < img src={info.results[0].image_url} alt="" />
     </React.Fragment>
-    
     
   )
 }
