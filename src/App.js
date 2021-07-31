@@ -28,33 +28,49 @@ function App() {
   rng = Math.floor(rng);
   const current_anime = anime[rng];
   
-
+  this.state = {
+    loading: true,
+    anime: null,
+  };
+  
   //When passing a string into the URL, use backquotes not single quotes.
-  const getInfo = async () => {
-    const temp2 = await fetch(`https://api.jikan.moe/v3/search/anime?q=${current_anime}&order_by=title&sort=asc&limit=1`)
+  const getInfo = async (search_anime) => {
+    const temp2 = await fetch(`https://api.jikan.moe/v3/search/anime?q=${search_anime}&order_by=title&sort=asc&limit=1`)
       .then(res => res.json());
     
     SetInfo(temp2);
   }
 
   useEffect(() => {
-    getInfo();
+    getInfo(current_anime);
+    this.setState({ anime: true, loading: false });
   }, [])
-    
+  
   function handleRandom(e){
-    
+    //Get a random number between 0 and 795
+    var rng2 = Math.random() * (795);
+    rng2 = Math.floor(rng2);
+    const current_anime2 = anime[rng];
+    getInfo(current_anime2);
   }
 
-  //console.log(anime)
+  //< img src={info.results[0].image_url} alt="" />
+  //console.log(current_anime)
   //console.log(info.results[0].title)
-  //console.log(info.results)
+  //console.log(info)
   //console.log(current_anime)
 
+  if (this.state.loading) {
+    return <div>loading...Anime</div>;
+  }
+
+  if (!this.state.anime) {
+    return <div>didn't get an anime...</div>;
+  }
+
   return (
-    
     <React.Fragment>
     <CenterLogo />
-
     <button 
       className='btn'
       onClick={handleRandom}
