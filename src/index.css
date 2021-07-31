@@ -8,12 +8,17 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: lightblue;
+  background-color: rgb(12, 16, 32);
 }
 
 .centerlogo h1 {
   text-align: center;
   font-size: 100px;
+  color: rgb(255, 255, 255);
+}
+
+.synopsis {
+  color: rgb(255, 255, 255);
 }
 
 .container {
@@ -35,8 +40,8 @@ body {
 
 .btn {
   display: table;
-  background: #000;
-  color: #fff;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   margin: 0 auto;

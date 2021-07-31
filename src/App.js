@@ -13,6 +13,7 @@ function App() {
   const [info, SetInfo] = useState([]);
   const [isLoading, SetLoading] = useState(true);
 
+  //Get a random number between 0 and 795 and return a random anime.
   function GenerateRandom(){
     var rng = Math.random() * (795);
     rng = Math.floor(rng);
@@ -31,7 +32,6 @@ function App() {
     getAnime();
   }, [])
 
-  //Get a random number between 0 and 795
   var current_anime = GenerateRandom();
  
   //When passing a string into the URL, use backquotes not single quotes.
@@ -56,7 +56,7 @@ function App() {
   //< img src={info.results[0].image_url} alt="" />
   //console.log(current_anime)
   //console.log(info.results[0].title)
-  //console.log(info)
+  console.log(info)
   //console.log(current_anime)
 
   //Checks if it is loading
@@ -73,6 +73,10 @@ function App() {
       >Randomize
     </button>
     < img src={info.results[0].image_url} alt="" />
+    <p
+      className='synopsis'>
+      {info.results[0].synopsis}
+    </p>
     </React.Fragment>
     
   )
