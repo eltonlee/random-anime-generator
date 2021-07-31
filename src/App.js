@@ -1,7 +1,7 @@
 import CenterLogo from './components/CenterLogo';
 import './index.css'
 import React from 'react';
-import Button from './components/button';
+//import Button from './components/button';
 import { useState, useEffect} from 'react';
 //import AnimeCard from './components/AnimeCard';
 
@@ -41,6 +41,9 @@ function App() {
     getInfo();
   }, [])
     
+  function handleRandom(e){
+    
+  }
 
   //console.log(anime)
   //console.log(info.results[0].title)
@@ -51,7 +54,12 @@ function App() {
     
     <React.Fragment>
     <CenterLogo />
-    <Button />
+
+    <button 
+      className='btn'
+      onClick={handleRandom}
+      >Randomize
+    </button>
     < img src={info.results[0].image_url} alt="" />
     </React.Fragment>
     
