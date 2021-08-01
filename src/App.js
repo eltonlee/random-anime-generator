@@ -91,9 +91,9 @@ function App() {
         </div>
 
       ) : (<div className="centerlogo">
-            <h1>
+            <h2>
               Loading...
-            </h1>
+            </h2>
           </div>)
     ) : (null)}
     
