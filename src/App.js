@@ -11,7 +11,8 @@ function App() {
 
   const [anime, SetAnime] = useState([]);
   const [info, SetInfo] = useState([]);
-  const [isLoading, SetLoading] = useState(true);
+  const [loaded, SetLoaded] = useState(false);
+  const [isClicked, SetClick] = useState(false);
 
   //Get a random number between 0 and 795 and return a random anime.
   function GenerateRandom(){
@@ -32,7 +33,6 @@ function App() {
     getAnime();
   }, [])
 
-  var current_anime = GenerateRandom();
  
   //When passing a string into the URL, use backquotes not single quotes.
   const getInfo = async (search_anime) => {
@@ -40,43 +40,64 @@ function App() {
       .then(res => res.json());
     
     SetInfo(temp2);
-    SetLoading(false);
+    SetLoaded(true);
   }
-
-  useEffect(() => {
-    getInfo(current_anime);
-  }, [])
-  
+  //Randomize Button
   function handleRandom(e){
-    //Get a random number between 0 and 795
+    SetClick(true);
+    SetLoaded(false)
     var current_anime2 = GenerateRandom();
     getInfo(current_anime2);
   }
 
-  //< img src={info.results[0].image_url} alt="" />
   //console.log(current_anime)
   //console.log(info.results[0].title)
   console.log(info)
   //console.log(current_anime)
 
   //Checks if it is loading
-  if (isLoading){
-    return <div className="App">Loading...</div>;
-  }
+  //if (isLoading){
+  //  return <div className="centerlogo">
+  //     <h1>
+  //        Loading...
+  //      </h1>
+  //    </div>;
+  //}
 
   return (
     <React.Fragment>
     <CenterLogo />
+
     <button 
       className='btn'
       onClick={handleRandom}
       >Randomize
     </button>
-    < img src={info.results[0].image_url} alt="" />
-    <p
-      className='synopsis'>
-      {info.results[0].synopsis}
-    </p>
+
+    {isClicked ? (
+      loaded ? (
+        <div>
+
+          <h1
+            className='title'>
+            {info.results[0].title}
+          </h1>
+
+          <img src={info.results[0].image_url} alt="" />
+          <p
+            className='synopsis'>
+            {info.results[0].synopsis}
+          </p>
+        </div>
+
+      ) : (<div className="centerlogo">
+            <h1>
+              Loading...
+            </h1>
+          </div>)
+    ) : (null)}
+    
+
     </React.Fragment>
     
   )
