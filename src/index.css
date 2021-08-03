@@ -17,6 +17,12 @@ body {
   color: rgb(255, 255, 255);
 }
 
+.LoadingEffect {
+  position: absolute;
+  left: 45%;
+  top: 40%;
+}
+
 .synopsis {
   text-align: center;
   color: rgb(255, 255, 255);

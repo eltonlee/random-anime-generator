@@ -1,8 +1,10 @@
 import CenterLogo from './components/CenterLogo';
 import './index.css'
 import React from 'react';
+import LoadingEffect from './components/LoadingEffect';
 //import Button from './components/button';
 import { useState, useEffect} from 'react';
+
 //import AnimeCard from './components/AnimeCard';
 
 
@@ -90,11 +92,7 @@ function App() {
           </p>
         </div>
 
-      ) : (<div className="centerlogo">
-            <h2>
-              Loading...
-            </h2>
-          </div>)
+      ) : (<LoadingEffect/>)
     ) : (null)}
     
 
