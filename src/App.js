@@ -1,11 +1,11 @@
-import CenterLogo from './components/CenterLogo';
-import './index.css'
 import React from 'react';
-import LoadingEffect from './components/LoadingEffect';
-//import Button from './components/button';
 import { useState, useEffect} from 'react';
-
-//import AnimeCard from './components/AnimeCard';
+import './index.css'
+import CenterLogo from './components/CenterLogo';
+import LoadingEffect from './components/LoadingEffect';
+import Button from './components/button';
+import Title from './components/Title';
+import AnimeImage from './components/AnimeImage';
 
 
 
@@ -35,7 +35,6 @@ function App() {
     getAnime();
   }, [])
 
- 
   //When passing a string into the URL, use backquotes not single quotes.
   const getInfo = async (search_anime) => {
     const temp2 = await fetch(`https://api.jikan.moe/v3/search/anime?q=${search_anime}&order_by=title&sort=asc&limit=1`)
@@ -52,44 +51,19 @@ function App() {
     getInfo(current_anime2);
   }
 
-  //console.log(current_anime)
-  //console.log(info.results[0].title)
   console.log(info)
-  //console.log(current_anime)
-
-  //Checks if it is loading
-  //if (isLoading){
-  //  return <div className="centerlogo">
-  //     <h1>
-  //        Loading...
-  //      </h1>
-  //    </div>;
-  //}
 
   return (
     <React.Fragment>
     <CenterLogo />
-
-    <button 
-      className='btn'
-      onClick={handleRandom}
-      >Randomize
-    </button>
+    <Button func={handleRandom}/>
 
     {isClicked ? (
       loaded ? (
         <div>
-
-          <h1
-            className='title'>
-            {info.results[0].title}
-          </h1>
-
-          <img src={info.results[0].image_url} alt="" />
-          <p
-            className='synopsis'>
-            {info.results[0].synopsis}
-          </p>
+          <Title name={info.results[0].title}/>
+          <AnimeImage name={info.results[0].image_url} />
+          
         </div>
 
       ) : (<LoadingEffect/>)
