@@ -10,6 +10,7 @@ import InfoBar from './components/InfoBar';
 
 
 
+
 function App() {
 
   const [anime, SetAnime] = useState([]);
@@ -65,10 +66,16 @@ function App() {
           <Title name={info.results[0].title}/>
           <AnimeImage name={info.results[0].image_url} />
           <InfoBar score={info.results[0].score} airing={info.results[0].airing} numEp = {info.results[0].episodes}/>
+          <a href={info.results[0].url}><button className='btn'>For more info</button></a>
         </div>
 
       ) : (<LoadingEffect/>)
-    ) : (null)}
+    ) : (
+      <div className='Gif'>
+        <img src="https://media.giphy.com/media/GkD4U3VfiIbzcBhQNu/giphy.gif"alt='' width='30%'/>
+      </div>
+       
+    )}
     
 
     </React.Fragment>
