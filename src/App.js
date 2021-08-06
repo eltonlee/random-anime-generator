@@ -53,8 +53,6 @@ function App() {
     getInfo(current_anime2);
   }
 
-  console.log(info)
-
   return (
     <React.Fragment>
     <CenterLogo />
