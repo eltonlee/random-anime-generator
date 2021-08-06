@@ -36,59 +36,67 @@ body {
 
 .AnimeImage {
   display: flex;
-  border-image-width: -4px;
+  width: 230px;
   justify-content: center;
   margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.4s;
+  border: solid red 2px;
 }
 
-.InfoBar1 {
-  width: 350px;
-  font-size: 30px;
-  padding: 50px;
-  margin: 20px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(25, 34, 48);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.InfoBar2 {
-  width: 350px;
-  font-size: 30px;
-  padding: 50px;
-  margin: 20px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(25, 34, 48);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.InfoBar3 {
-  width: 350px;
-  font-size: 30px;
-  padding: 50px;
-  margin: 20px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(25, 34, 48);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+.AnimeImage:hover {
+  transform: scale(1.2);
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .container {
-  max-width: 500px;
-  margin: 30px auto;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid steelblue;
-  padding: 30px;
-  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1000px;
+  padding: 20px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+.InfoBarScore {
+  float: left;
+  text-align: center;
+  width: 350px;
+  font-size: 25px;
+  padding: 40px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-top: 100px;
+}
+
+.InfoBarAir {
+  float: left;
+  text-align: center;
+  margin-top: 100px;
+  width: 350px;
+  font-size: 25px;
+  padding: 40px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-right: 20px;
+}
+
+.InfoBarEpisode {
+  text-align: center;
+  width: 350px;
+  font-size: 25px;
+  padding: 40px;
+  margin-top: 100px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  float: left;
+  margin-left: 20px;
 }
 
 .btn {

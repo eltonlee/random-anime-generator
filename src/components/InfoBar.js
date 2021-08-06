@@ -4,16 +4,25 @@ export default function InfoBar(props) {
     return (
         <React.Fragment>
 
-        <div className='InfoBar1'>
-            Avg. Score:&nbsp;
-            {props.score}
-        </div>
+        <div className='container'>
 
-        <div clasName='InfoBar2'>
+            <div className='InfoBarAir'>
+                Airing:&nbsp;
+                {props.airing.toString()}
+            </div>
+
+            <div className='InfoBarScore'>
+                Avg. Score:&nbsp; 
+                {props.score}
+            </div>
+
+            <div className='InfoBarEpisode'>
+                Episodes:&nbsp;
+                {props.numEp}
+            </div>
             
-            {props.numEps}
-
         </div>
+
         </React.Fragment >
     )
 }
