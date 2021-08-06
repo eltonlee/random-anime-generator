@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/random-anime-generator/static/css/main.74149e7f.chunk.css",
-    "main.js": "/random-anime-generator/static/js/main.122dcdec.chunk.js",
-    "main.js.map": "/random-anime-generator/static/js/main.122dcdec.chunk.js.map",
+    "main.js": "/random-anime-generator/static/js/main.29f5791e.chunk.js",
+    "main.js.map": "/random-anime-generator/static/js/main.29f5791e.chunk.js.map",
     "runtime-main.js": "/random-anime-generator/static/js/runtime-main.766de2be.js",
     "runtime-main.js.map": "/random-anime-generator/static/js/runtime-main.766de2be.js.map",
     "static/js/2.f55a9a8b.chunk.js": "/random-anime-generator/static/js/2.f55a9a8b.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.766de2be.js",
     "static/js/2.f55a9a8b.chunk.js",
     "static/css/main.74149e7f.chunk.css",
-    "static/js/main.122dcdec.chunk.js"
+    "static/js/main.29f5791e.chunk.js"
   ]
 }
