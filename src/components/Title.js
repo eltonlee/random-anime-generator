@@ -5,7 +5,7 @@ export default function Title(props) {
         <div>
             <h1
                 className='title'>
-                {props.name}
+                <u>{props.name}</u>
             </h1>
         </div>
     )

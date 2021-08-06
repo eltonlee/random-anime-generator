@@ -36,16 +36,42 @@ body {
 
 .AnimeImage {
   display: flex;
-
   border-image-width: -4px;
   justify-content: center;
   margin-top: 50px;
 }
 
-.AnimeImage:hover {
-  transition: all 0.5s ease;
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+.InfoBar1 {
+  width: 350px;
+  font-size: 30px;
+  padding: 50px;
+  margin: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.InfoBar2 {
+  width: 350px;
+  font-size: 30px;
+  padding: 50px;
+  margin: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.InfoBar3 {
+  width: 350px;
+  font-size: 30px;
+  padding: 50px;
+  margin: 20px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(25, 34, 48);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .container {

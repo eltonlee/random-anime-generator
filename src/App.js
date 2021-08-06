@@ -6,6 +6,7 @@ import LoadingEffect from './components/LoadingEffect';
 import Button from './components/button';
 import Title from './components/Title';
 import AnimeImage from './components/AnimeImage';
+import InfoBar from './components/InfoBar';
 
 
 
@@ -63,7 +64,7 @@ function App() {
         <div>
           <Title name={info.results[0].title}/>
           <AnimeImage name={info.results[0].image_url} />
-          
+          <InfoBar score={info.results[0].score} airing={info.results[0].airing} numEp = {info.results[0].episodes}/>
         </div>
 
       ) : (<LoadingEffect/>)
