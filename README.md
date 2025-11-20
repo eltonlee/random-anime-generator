@@ -7,11 +7,8 @@ A beautiful React web app that generates random anime recommendations from MyAni
 ## Features
 
 - **Random Anime Discovery**: Get truly random anime recommendations with each click
-- **Modern UI**: Stunning gradient background with smooth animations
-- **Glassmorphism Design**: Beautiful frosted glass effects on info cards
 - **Detailed Information**: View anime title, cover image, score, airing status, and episode count
 - **Direct Links**: Quick access to full anime details on MyAnimeList
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Free API**: Uses the free Jikan API v4 (unofficial MyAnimeList API)
 
 ## Tech Stack
@@ -100,20 +97,6 @@ random-anime-generator/
 ├── package.json
 └── README.md
 ```
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Acknowledgments
-
-- [Jikan API](https://jikan.moe/) for providing free access to MyAnimeList data
-- [MyAnimeList](https://myanimelist.net/) for the comprehensive anime database
-- React community for excellent tools and libraries
 
 ## Live Demo
 
