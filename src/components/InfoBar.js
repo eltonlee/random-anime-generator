@@ -8,19 +8,19 @@ export default function InfoBar(props) {
 
             <div className='InfoBarAir'>
                 Airing:&nbsp;
-                {props.airing.toString()}
+                {props.airing || 'N/A'}
             </div>
 
             <div className='InfoBarScore'>
-                Avg. Score:&nbsp; 
-                {props.score}
+                Avg. Score:&nbsp;
+                {props.score || 'N/A'}
             </div>
 
             <div className='InfoBarEpisode'>
                 Episodes:&nbsp;
-                {props.numEp}
+                {props.numEp || 'N/A'}
             </div>
-            
+
         </div>
 
         </React.Fragment >

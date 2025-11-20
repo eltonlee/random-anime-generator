@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect} from 'react';
+import { useState } from 'react';
 import './index.css'
 import CenterLogo from './components/CenterLogo';
 import LoadingEffect from './components/LoadingEffect';
@@ -13,44 +13,24 @@ import InfoBar from './components/InfoBar';
 
 function App() {
 
-  const [anime, SetAnime] = useState([]);
-  const [info, SetInfo] = useState([]);
+  const [info, SetInfo] = useState(null);
   const [loaded, SetLoaded] = useState(false);
   const [isClicked, SetClick] = useState(false);
 
-  //Get a random number between 0 and 795 and return a random anime.
-  function GenerateRandom(){
-    var rng = Math.random() * (795);
-    rng = Math.floor(rng);
-    const current_anime = anime[rng];
-    return current_anime;
-  }
-
-  const getAnime = async () => {
-    const temp = await fetch('https://animechan.vercel.app/api/available/anime')
+  //Get random anime from Jikan API
+  const getRandomAnime = async () => {
+    SetLoaded(false);
+    const response = await fetch('https://api.jikan.moe/v4/random/anime')
       .then(res => res.json());
-    
-    SetAnime(temp);
-  }
 
-  useEffect(() => {
-    getAnime();
-  }, [])
-
-  //When passing a string into the URL, use backquotes not single quotes.
-  const getInfo = async (search_anime) => {
-    const temp2 = await fetch(`https://api.jikan.moe/v3/search/anime?q=${search_anime}&order_by=title&sort=asc&limit=1`)
-      .then(res => res.json());
-    
-    SetInfo(temp2);
+    SetInfo(response);
     SetLoaded(true);
   }
+
   //Randomize Button
   function handleRandom(e){
     SetClick(true);
-    SetLoaded(false)
-    var current_anime2 = GenerateRandom();
-    getInfo(current_anime2);
+    getRandomAnime();
   }
 
   return (
@@ -60,19 +40,21 @@ function App() {
 
     {isClicked ? (
       loaded ? (
-        <div>
-          <Title name={info.results[0].title}/>
-          <AnimeImage name={info.results[0].image_url} />
-          <InfoBar score={info.results[0].score} airing={info.results[0].airing} numEp = {info.results[0].episodes}/>
-          <a href={info.results[0].url}><button className='btn'>For more info</button></a>
+        <div className="anime-content">
+          <Title name={info.data.title}/>
+          <AnimeImage name={info.data.images.jpg.image_url} />
+          <InfoBar score={info.data.score} airing={info.data.status} numEp = {info.data.episodes}/>
+          <div style={{textAlign: 'center', marginTop: '40px', marginBottom: '40px'}}>
+            <a href={info.data.url} target="_blank" rel="noopener noreferrer"><button className='btn'>For more info</button></a>
+          </div>
         </div>
 
       ) : (<LoadingEffect/>)
     ) : (
       <div className='Gif'>
-        <img src="https://media.giphy.com/media/GkD4U3VfiIbzcBhQNu/giphy.gif"alt='' width='30%'/>
+        <img src="https://media.giphy.com/media/GkD4U3VfiIbzcBhQNu/giphy.gif" alt='Anime character' width='30%'/>
       </div>
-       
+
     )}
     
 

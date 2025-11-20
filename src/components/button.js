@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Button(props) {
     return (
-        <div className='btn'>
-            <button 
+        <div className='btn-wrapper'>
+            <button
                 className='btn'
                 onClick={props.func}
                 >Randomize
