@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/random-anime-generator/static/css/main.a94b8662.chunk.css",
-    "main.js": "/random-anime-generator/static/js/main.2dd151da.chunk.js",
-    "main.js.map": "/random-anime-generator/static/js/main.2dd151da.chunk.js.map",
+    "main.css": "/random-anime-generator/static/css/main.9007a5ef.chunk.css",
+    "main.js": "/random-anime-generator/static/js/main.90dcfa7b.chunk.js",
+    "main.js.map": "/random-anime-generator/static/js/main.90dcfa7b.chunk.js.map",
     "runtime-main.js": "/random-anime-generator/static/js/runtime-main.766de2be.js",
     "runtime-main.js.map": "/random-anime-generator/static/js/runtime-main.766de2be.js.map",
     "static/js/2.d756fcf1.chunk.js": "/random-anime-generator/static/js/2.d756fcf1.chunk.js",
     "static/js/2.d756fcf1.chunk.js.map": "/random-anime-generator/static/js/2.d756fcf1.chunk.js.map",
     "index.html": "/random-anime-generator/index.html",
-    "static/css/main.a94b8662.chunk.css.map": "/random-anime-generator/static/css/main.a94b8662.chunk.css.map",
+    "static/css/main.9007a5ef.chunk.css.map": "/random-anime-generator/static/css/main.9007a5ef.chunk.css.map",
     "static/js/2.d756fcf1.chunk.js.LICENSE.txt": "/random-anime-generator/static/js/2.d756fcf1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.766de2be.js",
     "static/js/2.d756fcf1.chunk.js",
-    "static/css/main.a94b8662.chunk.css",
-    "static/js/main.2dd151da.chunk.js"
+    "static/css/main.9007a5ef.chunk.css",
+    "static/js/main.90dcfa7b.chunk.js"
   ]
 }
